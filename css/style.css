@@ -75,7 +75,10 @@ header a:hover {
     font-family: 'Montserrat', sans-serif;
     font-size: 3em;
     margin-bottom: 10px;
-    color: #008080; /* Dark Teal */
+    background-image: linear-gradient(to right, #008080, #00ced1); /* Dark Teal to Dark Cyan */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #008080; /* Fallback for browsers that don't support text-fill-color */
 }
 
 .hero p {
@@ -121,6 +124,18 @@ section {
 
 section:nth-of-type(even) {
     background-color: #1a1a1a; /* Slightly lighter black for alternating sections */
+}
+
+/* Fade-in animation styles */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 section h2 {
